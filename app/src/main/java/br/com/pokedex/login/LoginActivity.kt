@@ -1,19 +1,17 @@
 package br.com.pokedex.login
 
 
+import android.content.Intent
 import android.graphics.drawable.AnimationDrawable
 import android.media.MediaPlayer
-import android.os.Build
 import android.os.Bundle
-import android.os.VibrationEffect
-import android.os.Vibrator
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.widget.Toast
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import br.com.pokedex.R
+import br.com.pokedex.pagina_inicial.PaginaInicialActivity
 import kotlinx.android.synthetic.main.activity_login.*
 import java.util.*
 
@@ -25,6 +23,7 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         supportActionBar?.hide()
+
 
         var mediaPlayer: MediaPlayer
 
@@ -87,6 +86,8 @@ class LoginActivity : AppCompatActivity() {
 
         btn_login.setOnClickListener{
             //TODO Fazer animacao antes de trocar a tela
+            val intent = Intent(baseContext, PaginaInicialActivity::class.java)
+            startActivity(intent)
         }
 
 

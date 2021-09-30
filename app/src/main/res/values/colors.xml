@@ -7,7 +7,7 @@
     <color name="teal_700">#ffff</color>
     <color name="black">#FF000000</color>
     <color name="branco">#FFFFFFFF</color>
-    <color name="branco_fundo">#fffcf9</color>
+    <color name="branco_fundo">#E3E3E3</color>
     <color name="verde">#14701C</color>
     <color name="cinza_claro">#D7D8D7</color>
     <color name="lilas">#944bbb</color>
