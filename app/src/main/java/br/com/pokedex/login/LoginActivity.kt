@@ -11,7 +11,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import br.com.pokedex.R
-import br.com.pokedex.pagina_inicial.PaginaInicialActivity
+import br.com.pokedex.pagina_inicial.view.PaginaInicialActivity
 import kotlinx.android.synthetic.main.activity_login.*
 import java.util.*
 
