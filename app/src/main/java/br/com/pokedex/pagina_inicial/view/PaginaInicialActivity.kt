@@ -16,7 +16,7 @@ class PaginaInicialActivity : AppCompatActivity() {
 
         val bulbasaur = Pokemon(
                 "https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png",
-                4,
+                1,
                 "Bulbasaur",
                 listOf(
                     PokemonType("Grass"),
@@ -24,7 +24,35 @@ class PaginaInicialActivity : AppCompatActivity() {
                 )
         )
 
-        val listPokemons = listOf(bulbasaur,bulbasaur,bulbasaur,bulbasaur)
+        val charmander = Pokemon(
+            "https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png",
+            4,
+            "Charmander ",
+            listOf(
+                PokemonType("Fire"),
+            )
+        )
+
+        val Squirtle  = Pokemon(
+            "https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png",
+            4,
+            "Squirtle",
+            listOf(
+                PokemonType("Water"),
+            )
+        )
+
+        val Pikachu = Pokemon(
+            "https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png",
+            25,
+            "Pikachu",
+            listOf(
+                PokemonType("Electric"),
+                PokemonType("Poison")
+            )
+        )
+
+        val listPokemons = listOf(bulbasaur,charmander,Squirtle,Pikachu)
 
 
         val layoutManager = LinearLayoutManager(this)
