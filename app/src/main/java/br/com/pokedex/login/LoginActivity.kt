@@ -8,6 +8,8 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
@@ -15,6 +17,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import br.com.pokedex.R
 import br.com.pokedex.pagina_inicial.view.PaginaInicialActivity
+import com.google.android.material.textfield.TextInputLayout
 import java.util.*
 
 
@@ -23,6 +26,8 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var imageView:ImageView
     private lateinit var input_senha: EditText
     private lateinit var input_email: EditText
+    private lateinit var email: TextInputLayout
+    private lateinit var senha: TextInputLayout
     private lateinit var btn_login: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,7 +38,12 @@ class LoginActivity : AppCompatActivity() {
         imageView = findViewById(R.id.imageView)
         input_senha = findViewById(R.id.input_senha)
         input_email = findViewById(R.id.input_email)
+        senha = findViewById(R.id.senha)
+        email = findViewById(R.id.email)
         btn_login = findViewById(R.id.btn_login)
+
+        val anim_surgir = AnimationUtils.loadAnimation(this,R.anim.anim_surgir)
+        imageView.startAnimation(anim_surgir)
 
 
         var mediaPlayer: MediaPlayer
@@ -99,6 +109,7 @@ class LoginActivity : AppCompatActivity() {
             //TODO Fazer animacao antes de trocar a tela
             val intent = Intent(baseContext, PaginaInicialActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
 

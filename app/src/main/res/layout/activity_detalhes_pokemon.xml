@@ -6,4 +6,92 @@
     android:layout_height="match_parent"
     tools:context=".detalhesPokemon.DetalhesPokemonActivity">
 
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/nome_pokemon_detalhes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bulbasaur"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/id_pokemon_detalhes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="Nº 001"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/img_pokemon_detalhes"
+        android:layout_marginTop="10dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/bulbasaur"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <TextView
+        android:id="@+id/descricao_pokemon"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger."
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/img_pokemon_detalhes"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Type"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/img_pokemon_detalhes"
+        app:layout_constraintTop_toBottomOf="@+id/descricao_pokemon" />
+
+    <Button
+        android:id="@+id/btn_type_1"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="Grass"
+        android:textColor="@color/branco"
+        app:layout_constraintStart_toEndOf="@+id/img_pokemon_detalhes"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <Button
+        android:id="@+id/btn_type_2"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:text="Grass"
+        android:backgroundTint="@color/lilas"
+        android:textColor="@color/branco"
+        app:layout_constraintStart_toEndOf="@+id/btn_type_1"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/teste_graficos"
+        app:layout_constraintTop_toBottomOf="@+id/img_pokemon_detalhes" />
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

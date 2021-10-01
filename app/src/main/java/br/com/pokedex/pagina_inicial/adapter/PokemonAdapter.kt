@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import br.com.pokedex.R
 import br.com.pokedex.detalhesPokemon.DetalhesPokemonActivity
@@ -54,7 +53,6 @@ class PokemonAdapter(
                 }
 
                 itemView.setOnClickListener {
-                    Toast.makeText(context,"Clicou no ${item.name}", Toast.LENGTH_LONG).show()
                     val gson = Gson()
                     val intent = Intent(context, DetalhesPokemonActivity::class.java)
                     intent.putExtra("pokemon_item", gson.toJson(item))

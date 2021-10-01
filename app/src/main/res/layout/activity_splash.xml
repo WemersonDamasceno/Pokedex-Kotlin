@@ -5,54 +5,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".splash.SplashActivity"
+    android:layout_gravity="center"
     android:background="@color/cinza_escuro">
 
+
     <ImageView
+        android:id="@+id/splash_logo"
         android:layout_width="250dp"
+        android:layout_marginTop="-200dp"
         android:layout_height="250dp"
-        android:src="@drawable/logo_pokebola"
-        app:layout_constraintBottom_toTopOf="@+id/helloWorldTextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/helloWorldTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:text="Seja um mestre"
-        android:textSize="35sp"
-        android:textStyle="bold"
-        android:fontFamily="serif-monospace"
-        android:textColor="@color/branco"
+        android:src="@drawable/logo"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="serif-monospace"
-        android:text="Pokemon!"
-        android:textAlignment="center"
-        android:textColor="@color/amarelo"
-        android:textSize="40sp"
-        android:textStyle="bold"
+    <ImageView
+        android:id="@+id/splash_pokemon"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:elevation="1dp"
+        android:src="@drawable/pokemon_nome"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/helloWorldTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/splash_logo" />
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="40dp"
+    <ImageView
+        android:id="@+id/splash_pikachu"
+        android:layout_width="450dp"
+        android:layout_height="250dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="-80dp"
+        android:src="@drawable/pikachu_splash"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/splash_logo" />
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

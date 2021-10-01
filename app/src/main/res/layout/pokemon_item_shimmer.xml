@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
 
@@ -15,6 +15,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="@color/cinza_claro_shimmer"
         app:cardElevation="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,10 +28,9 @@
 
             <ImageView
                 android:id="@+id/img_pokemon"
-                android:background="@color/cinza_claro"
+                android:background="@color/cinza_claro_shimmer"
                 android:layout_width="150dp"
                 android:layout_height="180dp"
-                android:src="@drawable/bulbasaur"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -41,7 +41,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="10dp"
-                android:text="Nº 150"
+                android:text=""
+                android:background="@color/cinza_claro_shimmer"
                 app:layout_constraintStart_toStartOf="@id/img_pokemon"
                 app:layout_constraintTop_toBottomOf="@+id/img_pokemon" />
 
@@ -53,7 +54,8 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginBottom="10dp"
                 android:textAppearance="?attr/textAppearanceHeadline6"
-                android:text="Bulbasaur"
+                android:text=""
+                android:background="@color/cinza_claro_shimmer"
                 android:textColor="@color/black"
                 android:textSize="24sp"
                 android:textStyle="bold"
@@ -69,9 +71,8 @@
         android:layout_width="65dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_marginStart="10dp"
-        android:background="@color/verde"
-        android:text="Grass"
+        android:text=""
+        android:background="@color/cinza_claro_shimmer"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="17sp"
@@ -82,8 +83,8 @@
         android:id="@+id/tipo_pokemon_2"
         android:layout_width="65dp"
         android:layout_height="wrap_content"
-        android:background="@color/lilas"
-        android:text="Poison"
+        android:text=""
+        android:background="@color/cinza_claro_shimmer"
         android:textAlignment="center"
         android:textColor="@color/branco"
         android:layout_marginTop="10dp"
