@@ -12,8 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SocialTime">
-        <activity android:name=".pagina_inicial.view.PaginaInicialActivity"></activity>
-        <activity android:name=".login.LoginActivity"></activity>
+        <activity android:name=".detalhesPokemon.DetalhesPokemonActivity"></activity>
+        <activity android:name=".pagina_inicial.view.PaginaInicialActivity" />
+        <activity android:name=".login.LoginActivity" />
         <activity android:name=".splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

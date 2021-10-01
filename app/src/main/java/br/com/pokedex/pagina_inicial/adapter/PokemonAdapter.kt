@@ -1,14 +1,19 @@
 package br.com.pokedex.pagina_inicial.adapter
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import br.com.pokedex.R
+import br.com.pokedex.detalhesPokemon.DetalhesPokemonActivity
 import br.com.pokedex.pagina_inicial.model.Pokemon
+import com.google.gson.Gson
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.pokemon_item.view.*
 
 class PokemonAdapter(
         private val items: List<Pokemon>
@@ -30,7 +35,14 @@ class PokemonAdapter(
         @SuppressLint("SetTextI18n")
         fun bindView(item: Pokemon){
             with(itemView){
-                Picasso.get().load(item.imageURL).into(itemView.img_pokemon)
+                val img_pokemon : ImageView = findViewById(R.id.img_pokemon)
+                val id_pokemon : TextView = findViewById(R.id.id_pokemon)
+                val nome_pokemon : TextView = findViewById(R.id.nome_pokemon)
+                val tipo_pokemon_1: TextView = findViewById(R.id.tipo_pokemon_1)
+                val tipo_pokemon_2: TextView = findViewById(R.id.tipo_pokemon_2)
+
+
+                Picasso.get().load(item.imageURL).into(img_pokemon)
                 id_pokemon.text = "Nº ${item.numeroFormatado}"
                 nome_pokemon.text = item.name
                 tipo_pokemon_1.text = item.types[0].name
@@ -41,8 +53,18 @@ class PokemonAdapter(
                     tipo_pokemon_2.visibility = View.GONE
                 }
 
+                itemView.setOnClickListener {
+                    Toast.makeText(context,"Clicou no ${item.name}", Toast.LENGTH_LONG).show()
+                    val gson = Gson()
+                    val intent = Intent(context, DetalhesPokemonActivity::class.java)
+                    intent.putExtra("pokemon_item", gson.toJson(item))
+                    context.startActivity(intent)
+                }
+
             }
         }
+
+
     }
 
 

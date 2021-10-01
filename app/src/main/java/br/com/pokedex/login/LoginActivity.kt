@@ -8,21 +8,32 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
+import android.widget.Button
+import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import br.com.pokedex.R
 import br.com.pokedex.pagina_inicial.view.PaginaInicialActivity
-import kotlinx.android.synthetic.main.activity_login.*
 import java.util.*
 
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var isAnimation: AnimationDrawable
+    private lateinit var imageView:ImageView
+    private lateinit var input_senha: EditText
+    private lateinit var input_email: EditText
+    private lateinit var btn_login: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         supportActionBar?.hide()
+
+        imageView = findViewById(R.id.imageView)
+        input_senha = findViewById(R.id.input_senha)
+        input_email = findViewById(R.id.input_email)
+        btn_login = findViewById(R.id.btn_login)
 
 
         var mediaPlayer: MediaPlayer
