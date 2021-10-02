@@ -10,7 +10,6 @@ import br.com.pokedex.pagina_inicial.adapter.PokemonAdapter
 import br.com.pokedex.pagina_inicial.model.Pokemon
 import br.com.pokedex.pagina_inicial.model.PokemonType
 import com.facebook.shimmer.ShimmerFrameLayout
-import java.util.*
 
 
 class PaginaInicialActivity : AppCompatActivity() {
@@ -22,19 +21,21 @@ class PaginaInicialActivity : AppCompatActivity() {
         //TODO 03 - Adicionar o retrofit para consumir a API
 
         val shimmer = findViewById<View>(R.id.shimmerFrameLayout) as ShimmerFrameLayout
-        shimmer.visibility = View.GONE
-        //shimmer.startShimmer()
-        // shimmer.stopShimmer()
-
+        shimmer.startShimmer()
 
         //list fake
         val listPokemons = listaPokemonsMocados()
 
-
-         val layoutManager = GridLayoutManager(baseContext, 2)
+        val layoutManager = GridLayoutManager(baseContext, 2)
         val rvPokemons: RecyclerView = findViewById(R.id.rvPokemons)
         rvPokemons.layoutManager = layoutManager
         rvPokemons.adapter = PokemonAdapter(listPokemons)
+
+
+
+        shimmer.stopShimmer()
+        shimmer.visibility = View.GONE
+
 
 
 

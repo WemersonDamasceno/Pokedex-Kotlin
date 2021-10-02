@@ -48,8 +48,8 @@ dependencies {
     //Picasso - Carregar as imagens
     implementation 'com.squareup.picasso:picasso:2.71828'
     //Retrofit - Para consumir as API's
-    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
     //Shimmer - Para efeito de carregando na lista
     implementation 'com.facebook.shimmer:shimmer:0.5.0'
     //RecyclerView - Lists
