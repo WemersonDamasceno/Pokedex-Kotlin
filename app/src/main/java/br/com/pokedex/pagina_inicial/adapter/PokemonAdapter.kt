@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import br.com.pokedex.R
@@ -41,6 +42,7 @@ class PokemonAdapter(
                 val nome_pokemon : TextView = findViewById(R.id.nome_pokemon)
                 val tipo_pokemon_1: TextView = findViewById(R.id.tipo_pokemon_1)
                 val tipo_pokemon_2: TextView = findViewById(R.id.tipo_pokemon_2)
+                val item_favoritar: ImageView = findViewById(R.id.item_favoritar)
 
 
                 Picasso.get().load(item.imageUrl).into(img_pokemon)
@@ -72,6 +74,12 @@ class PokemonAdapter(
                     intent.putExtra("pokemon_item", gson.toJson(item))
                     context.startActivity(intent)
                 }
+
+                item_favoritar.setOnClickListener{
+                    Toast.makeText(context,"O ${item.name} foi favoritado!",Toast.LENGTH_LONG).show()
+                    item_favoritar.setImageResource(R.drawable.ic_poke_marcado)
+                }
+
 
             }
         }

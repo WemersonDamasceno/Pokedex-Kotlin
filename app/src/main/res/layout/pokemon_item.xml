@@ -25,6 +25,28 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <androidx.cardview.widget.CardView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:elevation="2dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                app:cardCornerRadius="15dp"
+                app:cardBackgroundColor="@color/branco_fundo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" >
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/item_favoritar"
+                    android:layout_gravity="center"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_poke_desmarcado"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.cardview.widget.CardView>
+
+
             <ImageView
                 android:id="@+id/img_pokemon"
                 android:background="@color/cinza_claro"
@@ -49,14 +71,15 @@
                 android:id="@+id/nome_pokemon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:layout_marginStart="10dp"
-                android:layout_marginBottom="10dp"
-                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
                 android:text="Bulbasaur"
+                android:textAppearance="?attr/textAppearanceHeadline6"
                 android:textColor="@color/black"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@id/img_pokemon"
                 app:layout_constraintTop_toBottomOf="@+id/id_pokemon" />
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -75,7 +98,7 @@
         android:textAlignment="center"
         android:textStyle="bold"
         android:textColor="@color/branco"
-        android:textSize="17sp"
+        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@+id/cardView"
         app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
@@ -89,7 +112,7 @@
         android:textColor="@color/branco"
         android:textStyle="bold"
         android:layout_marginTop="10dp"
-        android:textSize="17sp"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/cardView"
         app:layout_constraintStart_toEndOf="@+id/tipo_pokemon_1"
         app:layout_constraintTop_toBottomOf="@+id/cardView" />
