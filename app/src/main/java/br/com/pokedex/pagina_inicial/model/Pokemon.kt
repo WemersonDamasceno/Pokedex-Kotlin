@@ -4,13 +4,15 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class Pokemon (
-        val imageURL: String,
-        val id: Int,
+data class Pokemon(
+        val number: Int,
         val name: String,
         val types: List<PokemonType>
-        ) : Parcelable{
-    val numeroFormatado = id.toString().padStart(3,'0')
+) : Parcelable {
+
+    val formattedNumber = number.toString().padStart(3, '0')
+
+    val imageUrl = "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/$formattedNumber.png"
 }
 
 @Parcelize

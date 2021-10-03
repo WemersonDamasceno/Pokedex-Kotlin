@@ -1,5 +1,6 @@
 package br.com.pokedex.pagina_inicial.repository.model
 
+import br.com.pokedex.pagina_inicial.model.Pokemon
 import br.com.pokedex.pagina_inicial.model.PokemonType
 
 //O objeto que a API vai retornar
@@ -10,18 +11,19 @@ data class PokemonsApiResult(
     val results: List<PokemonResult>
 )
 
+
 data class PokemonResult(
-    val name: String,
-    val url: String
+        val name: String,
+        val url: String
 )
 
 data class PokemonApiResult(
     val id: Int,
     val name: String,
-    val types: PokemonTypesSlot
+    val types: List<PokemonTypeSlot>
 )
 
-data class PokemonTypesSlot(
+data class PokemonTypeSlot(
     val slot: Int,
-    val type: PokemonType,
+    val type: PokemonType
 )

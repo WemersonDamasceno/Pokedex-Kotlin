@@ -2,11 +2,13 @@ package br.com.pokedex.pagina_inicial.adapter
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import br.com.pokedex.R
 import br.com.pokedex.detalhesPokemon.DetalhesPokemonActivity
@@ -41,13 +43,25 @@ class PokemonAdapter(
                 val tipo_pokemon_2: TextView = findViewById(R.id.tipo_pokemon_2)
 
 
-                Picasso.get().load(item.imageURL).into(img_pokemon)
-                id_pokemon.text = "Nº ${item.numeroFormatado}"
+                Picasso.get().load(item.imageUrl).into(img_pokemon)
+                id_pokemon.text = "Nº ${item.formattedNumber}"
                 nome_pokemon.text = item.name
-                tipo_pokemon_1.text = item.types[0].name
+                tipo_pokemon_1.text = item.types[0].name.toUpperCase()
+
+                when(tipo_pokemon_1.text.toString()){
+                    "grass" -> tipo_pokemon_1.setBackgroundColor(ContextCompat.getColor(context, R.color.amarelo))
+                    "poison" -> tipo_pokemon_1.setBackgroundColor(Color.parseColor("#b97fc9"))
+                    "fire" -> tipo_pokemon_1.setBackgroundColor(Color.parseColor("#fd7d24"))
+                    "psychic" -> tipo_pokemon_1.setBackgroundColor(Color.parseColor("#f366b9"))
+                    "bug" -> tipo_pokemon_1.setBackgroundColor(Color.parseColor("#729f3f"))
+                    "dark" -> tipo_pokemon_1.setBackgroundColor(Color.parseColor("#707070"))
+                    "flying" -> tipo_pokemon_1.setBackgroundColor(Color.parseColor("#3dc7ef"))
+                    "eletric" -> tipo_pokemon_1.setBackgroundColor(Color.parseColor("##eed535"))
+                }
+
                 if(item.types.size >1){
                     tipo_pokemon_2.visibility = View.VISIBLE
-                    tipo_pokemon_2.text = item.types[1].name
+                    tipo_pokemon_2.text = item.types[1].name.toUpperCase()
                 }else{
                     tipo_pokemon_2.visibility = View.GONE
                 }

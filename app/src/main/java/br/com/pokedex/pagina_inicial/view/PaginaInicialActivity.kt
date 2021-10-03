@@ -3,84 +3,48 @@ package br.com.pokedex.pagina_inicial.view
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.pokedex.R
 import br.com.pokedex.pagina_inicial.adapter.PokemonAdapter
 import br.com.pokedex.pagina_inicial.model.Pokemon
-import br.com.pokedex.pagina_inicial.model.PokemonType
+import br.com.pokedex.pagina_inicial.viewmodel.PokemonViewModel
+import br.com.pokedex.pagina_inicial.viewmodel.PokemonViewModelFactory
 import com.facebook.shimmer.ShimmerFrameLayout
 
 
 class PaginaInicialActivity : AppCompatActivity() {
+    private val viewModelPokemon by lazy {
+        ViewModelProvider(this, PokemonViewModelFactory())
+            .get(PokemonViewModel::class.java)
+    }
+
+    private val recyclerView by lazy {
+        findViewById<RecyclerView>(R.id.rvPokemons)
+    }
+
+    private val shimmer by lazy {
+        findViewById<View>(R.id.shimmerFrameLayout) as ShimmerFrameLayout
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pagina_inicial)
 
-        //TODO 01 - Adicionar um menu na tela inicial
-        //TODO 03 - Adicionar o retrofit para consumir a API
 
-        val shimmer = findViewById<View>(R.id.shimmerFrameLayout) as ShimmerFrameLayout
         shimmer.startShimmer()
 
-        //list fake
-        val listPokemons = listaPokemonsMocados()
-
-        val layoutManager = GridLayoutManager(baseContext, 2)
-        val rvPokemons: RecyclerView = findViewById(R.id.rvPokemons)
-        rvPokemons.layoutManager = layoutManager
-        rvPokemons.adapter = PokemonAdapter(listPokemons)
-
-
-
-        shimmer.stopShimmer()
-        shimmer.visibility = View.GONE
-
-
-
-
+        viewModelPokemon.pokemons.observe(this, {
+            loadRecyclerView(it)
+        })
 
     }
-
-    private fun listaPokemonsMocados(): List<Pokemon> {
-        return listOf(
-            Pokemon(
-                "https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png",
-                1,
-                "Bulbasaur",
-                listOf(
-                    PokemonType("Grass"),
-                    PokemonType("Poison")
-                )
-            ),
-
-            Pokemon(
-                "https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png",
-                4,
-                "Charmander ",
-                listOf(
-                    PokemonType("Fire"),
-                )
-            ),
-
-            Pokemon(
-                "https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png",
-                4,
-                "Squirtle",
-                listOf(
-                    PokemonType("Water"),
-                )
-            ),
-
-            Pokemon(
-                "https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png",
-                25,
-                "Pikachu",
-                listOf(
-                    PokemonType("Electric"),
-                    PokemonType("Poison")
-                )
-            )
-        )
+    @Suppress("UNCHECKED_CAST")
+    private fun loadRecyclerView(pokemons: List<Pokemon?>) {
+        recyclerView.layoutManager = GridLayoutManager(baseContext, 2)
+        recyclerView.adapter = PokemonAdapter(pokemons as List<Pokemon>)
+        shimmer.visibility = View.GONE
+        shimmer.stopShimmer()
     }
 }
