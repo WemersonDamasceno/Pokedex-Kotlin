@@ -20,7 +20,7 @@
 
 ---
 
-#O que falta implementar:
+# O que falta implementar:
 1. Tela de detalhes do pokemon
 2. Criar tema light e dark
 3. Realizar algumas animação
